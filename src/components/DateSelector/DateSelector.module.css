@@ -1,0 +1,44 @@
+:local(.dateSection) {
+  flex: 1;
+}
+
+:local(.sectionTitle) {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(var(--color-text-primary));
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  :local(.sectionTitle) {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+}
+
+:local(.dateInput) {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid rgb(var(--color-border));
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text-primary));
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+@media (min-width: 768px) {
+  :local(.dateInput) {
+    padding: 1rem;
+  }
+}
+
+:local(.dateInput:hover) {
+  border-color: rgb(var(--color-border-hover));
+}
+
+:local(.dateInput:focus) {
+  outline: none;
+  border-color: rgb(var(--color-primary));
+}

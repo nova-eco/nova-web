@@ -1,0 +1,24 @@
+@reference "tailwindcss";
+
+.container {
+  @apply min-h-screen flex items-center justify-center;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-text-primary));
+}
+
+.content {
+  @apply flex flex-col items-center gap-4 p-8;
+}
+
+.message {
+  @apply text-lg font-medium;
+  color: rgb(var(--color-text-secondary));
+}
+
+.container.light {
+  background-color: rgb(var(--color-background));
+}
+
+.container.dark {
+  background-color: rgb(var(--color-background));
+}

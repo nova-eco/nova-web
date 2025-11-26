@@ -1,0 +1,37 @@
+@reference "tailwindcss";
+
+@layer components {
+  .CardButton {
+    background-color: rgb(var(var(--color-primary)));
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .CardButton:hover {
+    background-color: rgb(var(var(--color-primary-hover)));
+    opacity: 0.9;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .CardButton:active {
+    transform: translateY(0);
+  }
+
+  .dark .CardButton {
+    background-color: rgb(var(var(--color-primary)));
+  }
+
+  .dark .CardButton:hover {
+    background-color: rgb(var(var(--color-primary-hover)));
+    opacity: 0.9;
+  }
+}

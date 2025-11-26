@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "paths": {
+      "@app/*": ["./src/*"],
+      "@test/*": ["./test/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es6"
+  },
+  "exclude": ["coverage", "dist", "node_modules"],
+  "files": ["src/index.tsx"],
+  "include": [
+    "**/.module.css",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/WorkplaceView/WorkplaceView",
+    "src/pages/Booking/Booking.bak",
+    "src/pages/Booking/BookingConnected.bak",
+    "src/pages/Booking/index.bak",
+    "src/pages/Booking/BookingProps.bak",
+    "postcss.config.mjs",
+    "postcss.config.mjs",
+    "src/pages/admin/StaffEdit/EditStaff.bak",
+    "src/store/staffMembers.bak",
+    "src/pages/BookingPathwayPaymentOptions/BookingPathwayPaymentOptionsProps.bak",
+    "src/pages/BookingPathwayPaymentOptions/BookingPathwayPaymentOptionsConnected.bak",
+    "src/pages/BookingPathwayPaymentOptions/BookingPathwayPaymentOptions.bak"
+  ]
+}

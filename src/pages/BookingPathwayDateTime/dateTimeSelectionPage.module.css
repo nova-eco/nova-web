@@ -1,0 +1,25 @@
+:local(.container) {
+  background-color: rgb(var(--color-background));
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  :local(.container) {
+    padding: 1.5rem;
+  }
+}
+
+:local(.content) {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  :local(.content) {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,49 @@
+import { connect } from 'react-redux';
+import { RootState } from '@app/store';
+import {
+  setCheckoutMode,
+  setSelectedPaymentOption,
+  setStep,
+} from '@app/store/bookingSlice';
+import { CheckoutMode, Service } from '@app/types';
+import BookingPathwayPaymentOptions from './BookingPathwayPaymentOptions';
+
+interface StateProps {
+  service: Service | null;
+  currencySymbol: string;
+  checkoutMode: CheckoutMode | null;
+}
+
+interface DispatchProps {
+  onSelectCheckoutMode: (mode: CheckoutMode) => void;
+  onSelectPaymentOption: (option: 'full' | 'deposit' | 'skip') => void;
+  onBack: () => void;
+}
+
+const mapStateToProps = (state: RootState): StateProps => ({
+  service: state.booking.service,
+  currencySymbol: state.config.currencySymbol,
+  checkoutMode: state.booking.checkoutMode,
+});
+
+const mapDispatchToProps = (dispatch: any): DispatchProps => ({
+  onSelectCheckoutMode: (mode: CheckoutMode) => {
+    dispatch(setCheckoutMode(mode));
+  },
+  onSelectPaymentOption: (option: 'full' | 'deposit' | 'skip') => {
+    dispatch(setSelectedPaymentOption(option));
+    if (option === 'skip') {
+      dispatch(setStep(7));
+    } else {
+      dispatch(setStep(6.5));
+    }
+  },
+  onBack: () => {
+    dispatch(setStep(5));
+  },
+});
+
+export const BookingPathwayPaymentOptionsConnected = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BookingPathwayPaymentOptions);

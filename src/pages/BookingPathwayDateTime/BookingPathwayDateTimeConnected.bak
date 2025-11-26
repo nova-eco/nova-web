@@ -1,0 +1,41 @@
+import { connect } from 'react-redux';
+import { TIME_SLOTS } from '@app/data/salonData';
+import { RootState } from '@app/store';
+import { setDate, setStep, setTime } from '@app/store/bookingSlice';
+import { BookingPathwayDateTime } from './BookingPathwayDateTime';
+
+interface StateProps {
+  timeSlots: string[];
+  selectedDate: string;
+  selectedTime: string;
+}
+
+interface DispatchProps {
+  onSetDate: (date: string) => void;
+  onSetTime: (time: string) => void;
+  onBack: () => void;
+}
+
+const mapStateToProps = (state: RootState): StateProps => ({
+  timeSlots: TIME_SLOTS,
+  selectedDate: state.bookingPathway.preBookingRequest.,
+  selectedTime: state.booking.time,
+});
+
+const mapDispatchToProps = (dispatch: any): DispatchProps => ({
+  onSetDate: (date: string) => {
+    dispatch(setDate(date));
+  },
+  onSetTime: (time: string) => {
+    dispatch(setTime(time));
+    dispatch(setStep(5));
+  },
+  onBack: () => {
+    dispatch(setStep(3));
+  },
+});
+
+export const BookingPathwayDateTimeConnected = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BookingPathwayDateTime);

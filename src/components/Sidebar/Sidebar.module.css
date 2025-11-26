@@ -1,0 +1,8 @@
+.sidebar {
+  background-color: rgb(72, 96, 112);
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  overflow-y: auto;
+}

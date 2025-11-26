@@ -1,0 +1,11 @@
+{
+  "ignorePaths": [".git", ".github", "coverage", "dist", "node_modules", "package.json"],
+  "language": "en-gb",
+  "languageSettings": [
+    {
+      "languageId": "bash, javascript, typescript"
+    }
+  ],
+  "version": "0.2",
+  "words": ["ecodev", "granul8", "healthcheck", "thunk", "thunks", "tsconfg", "tspaths"]
+}

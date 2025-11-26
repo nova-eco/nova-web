@@ -1,0 +1,89 @@
+@reference "tailwindcss";
+
+@layer components {
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    color: rgb(var(--color-text-primary));
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: rgb(var(--color-text-secondary));
+    margin: 0;
+  }
+
+  /* Tablet and above */
+  @media (min-width: 768px) {
+    .header {
+      padding: 2rem 1.5rem;
+      gap: 0.75rem;
+    }
+
+    .title {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  /* Desktop and above */
+  @media (min-width: 1024px) {
+    .header {
+      padding: 2.5rem 2rem;
+      gap: 1rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  /* Mobile-specific: subtitle as standard text */
+  @media (max-width: 767px) {
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+  }
+
+  /* Theme-specific adjustments */
+  .dark .title {
+    color: rgb(var(--color-text-primary));
+  }
+
+  .dark .subtitle {
+    color: rgb(var(--color-text-secondary));
+  }
+
+  .light .title {
+    color: rgb(var(--color-text-primary));
+  }
+
+  .light .subtitle {
+    color: rgb(var(--color-text-secondary));
+  }
+}

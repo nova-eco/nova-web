@@ -1,0 +1,120 @@
+import { ArrowRight, CreditCard, LogIn, UserCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BackButton from '@app/components/BackButton';
+import BookingPathwayHeader from '@app/components/BookingPathwayHeader';
+import PaymentDeposit from '@app/components/PaymentDeposit';
+import PaymentFull from '@app/components/PaymentFull';
+import PaymentSalon from '@app/components/PaymentSalon';
+import { BookingPathwayPaymentOptionsProps } from './BookingPathwayPaymentOptionsProps.bak';
+import * as styles from './paymentOptionsPage.module.css';
+
+const BookingPathwayPaymentOptions: React.FC<BookingPathwayPaymentOptionsProps> = ({
+  service,
+  currencySymbol,
+  checkoutMode,
+  onSelectCheckoutMode,
+  onSelectPaymentOption,
+  onBack,
+  theme,
+}) => {
+  const navigate = useNavigate();
+  const [selectedOption, setSelectedOption] = useState<
+    'full' | 'deposit' | 'skip' | null
+  >(null);
+
+  if (!service) {
+    return null;
+  }
+
+  const handleContinue = () => {
+    if (!selectedOption) return;
+
+    onSelectPaymentOption(selectedOption);
+
+    if (selectedOption === 'skip') {
+      navigate('/images');
+    } else {
+      navigate('/payment');
+    }
+  };
+
+  const paymentRequired = service.paymentRequirement !== 'none';
+
+  return (
+    <div className={styles.container} data-theme={theme}>
+      <BookingPathwayHeader icon={CreditCard} title="Checkout Options" theme={theme} />
+
+      <div className={styles.checkoutSection}>
+        <h3 className={styles.checkoutTitle}>How would you like to proceed?</h3>
+        <div className={styles.checkoutOptions}>
+          <div
+            className={`${styles.checkoutCard} ${checkoutMode === 'guest' ? styles.selected : ''}`}
+            onClick={() => onSelectCheckoutMode('guest')}
+          >
+            <UserCircle className={styles.checkoutIcon} />
+            <div className={styles.checkoutLabel}>Continue as Guest</div>
+          </div>
+          <div
+            className={`${styles.checkoutCard} ${checkoutMode === 'login' ? styles.selected : ''}`}
+            onClick={() => onSelectCheckoutMode('login')}
+          >
+            <LogIn className={styles.checkoutIcon} />
+            <div className={styles.checkoutLabel}>Login</div>
+          </div>
+        </div>
+      </div>
+
+      {checkoutMode && (
+        <div className={styles.paymentSection}>
+          <h3 className={styles.paymentTitle}>Payment Options</h3>
+
+          {paymentRequired && (
+            <>
+              <PaymentFull
+                price={service.price}
+                currencySymbol={currencySymbol}
+                isSelected={selectedOption === 'full'}
+                onSelect={() => setSelectedOption('full')}
+                theme={theme}
+              />
+
+              {service.paymentRequirement === 'deposit' && service.depositAmount && (
+                <PaymentDeposit
+                  depositAmount={service.depositAmount}
+                  remainingAmount={service.price - service.depositAmount}
+                  currencySymbol={currencySymbol}
+                  isSelected={selectedOption === 'deposit'}
+                  onSelect={() => setSelectedOption('deposit')}
+                  theme={theme}
+                />
+              )}
+            </>
+          )}
+
+          <PaymentSalon
+            price={service.price}
+            currencySymbol={currencySymbol}
+            isSelected={selectedOption === 'skip'}
+            onSelect={() => setSelectedOption('skip')}
+            theme={theme}
+          />
+
+          <div className={styles.buttonGroup}>
+            <BackButton onBack={onBack} theme={theme} />
+            <button
+              className={`${styles.continueButton} ${!selectedOption ? styles.disabled : ''}`}
+              onClick={handleContinue}
+              disabled={!selectedOption}
+            >
+              Continue
+              <ArrowRight size={20} />
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default BookingPathwayPaymentOptions;

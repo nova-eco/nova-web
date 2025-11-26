@@ -1,0 +1,121 @@
+:local(.container) {
+  background-color: rgb(var(--color-background));
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  :local(.container) {
+    padding: 2rem;
+  }
+}
+
+:local(.checkoutSection) {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgb(var(--color-border));
+}
+
+:local(.checkoutTitle) {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(var(--color-text-primary));
+  margin-bottom: 1rem;
+}
+
+:local(.checkoutOptions) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  :local(.checkoutOptions) {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+:local(.checkoutCard) {
+  flex: 1;
+  padding: 1.5rem;
+  border: 2px solid rgb(var(--color-border));
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  background-color: rgb(var(--color-background));
+}
+
+:local(.checkoutCard:hover) {
+  border-color: rgb(var(--color-primary));
+}
+
+:local(.checkoutCard.selected) {
+  border-color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-surface));
+}
+
+:local(.checkoutIcon) {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.5rem;
+  color: rgb(var(--color-primary));
+}
+
+:local(.checkoutLabel) {
+  font-weight: 600;
+  color: rgb(var(--color-text-primary));
+}
+
+:local(.paymentSection) {
+  margin-top: 2rem;
+}
+
+:local(.paymentTitle) {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(var(--color-text-primary));
+  margin-bottom: 1rem;
+}
+
+:local(.buttonGroup) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  :local(.buttonGroup) {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+:local(.continueButton) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-background));
+  flex: 1;
+}
+
+:local(.continueButton:hover:not(:disabled)) {
+  background-color: rgb(var(--color-primary-hover));
+}
+
+:local(.continueButton:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

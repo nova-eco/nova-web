@@ -1,0 +1,1 @@
+export { LoginConnected as default } from './LoginConnected';

@@ -1,0 +1,62 @@
+@reference "tailwindcss";
+
+:root {
+  --color-primary: 26 71 130; /* Deep classical blue */
+  --color-primary-hover: 18 56 103; /* Darker blue on hover */
+  --color-secondary: 217 70 239; /* Accent purple */
+  --color-accent: 234 88 12; /* Warm orange accent */
+
+  --color-background: 255 255 255; /* Clean white */
+  --color-surface: 249 250 251; /* Subtle off-white */
+  --color-surface-elevated: 243 244 246; /* Elevated surfaces */
+
+  --color-text-primary: 17 24 39; /* Near black */
+  --color-text-secondary: 55 65 81; /* Medium gray */
+  --color-text-muted: 107 114 128; /* Muted gray */
+
+  --color-border: 229 231 235; /* Light border */
+  --color-border-hover: 209 213 219; /* Border on hover */
+
+  --color-success: 21 128 61; /* Green success */
+  --color-warning: 202 138 4; /* Amber warning */
+  --color-error: 185 28 28; /* Red error */
+}
+
+.dark {
+  --color-primary: 96 165 250; /* Bright blue */
+  --color-primary-hover: 147 197 253; /* Lighter blue hover */
+  --color-secondary: 192 132 252; /* Purple accent */
+  --color-accent: 251 146 60; /* Orange accent */
+
+  --color-background: 15 23 42; /* Deep navy blue */
+  --color-surface: 30 41 59; /* Slate surface */
+  --color-surface-elevated: 51 65 85; /* Elevated slate */
+
+  --color-text-primary: 248 250 252; /* Near white */
+  --color-text-secondary: 203 213 225; /* Light gray */
+  --color-text-muted: 148 163 184; /* Muted light gray */
+
+  --color-border: 51 65 85; /* Dark border */
+  --color-border-hover: 71 85 105; /* Border on hover */
+
+  --color-success: 34 197 94; /* Bright green */
+  --color-warning: 251 191 36; /* Bright amber */
+  --color-error: 239 68 68; /* Bright red */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}

@@ -1,0 +1,130 @@
+/* Desktop progress bar */
+:local(.desktopContainer) {
+  margin-top: 1rem;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  :local(.desktopContainer) {
+    display: flex;
+    margin-top: 1.5rem;
+  }
+}
+
+:local(.stepCircle) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background-color: rgb(var(--color-border));
+  color: rgb(var(--color-text-muted));
+}
+
+@media (min-width: 768px) {
+  :local(.stepCircle) {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+:local(.stepCircle.active) {
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-background));
+}
+
+:local(.connector) {
+  flex: 1;
+  height: 0.25rem;
+  margin: 0 0.25rem;
+  transition: all 0.2s;
+  background-color: rgb(var(--color-border));
+}
+
+@media (min-width: 768px) {
+  :local(.connector) {
+    margin: 0 0.5rem;
+  }
+}
+
+:local(.connector.active) {
+  background-color: rgb(var(--color-primary));
+}
+
+/* Desktop progress labels */
+:local(.desktopLabels) {
+  margin-top: 0.5rem;
+  display: none;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgb(var(--color-text-muted));
+}
+
+@media (min-width: 640px) {
+  :local(.desktopLabels) {
+    display: flex;
+  }
+}
+
+:local(.label) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60px;
+}
+
+@media (min-width: 768px) {
+  :local(.label) {
+    max-width: none;
+  }
+}
+
+/* Mobile progress indicator */
+:local(.mobileContainer) {
+  margin-top: 1rem;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  :local(.mobileContainer) {
+    display: none;
+  }
+}
+
+:local(.mobileHeader) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+:local(.stepText) {
+  color: rgb(var(--color-text-muted));
+}
+
+:local(.currentLabel) {
+  color: rgb(var(--color-primary));
+  font-weight: 600;
+}
+
+:local(.progressTrack) {
+  margin-top: 0.5rem;
+  background-color: rgb(var(--color-border));
+  border-radius: 9999px;
+  height: 0.5rem;
+  overflow: hidden;
+}
+
+:local(.progressBar) {
+  background-color: rgb(var(--color-primary));
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s;
+}

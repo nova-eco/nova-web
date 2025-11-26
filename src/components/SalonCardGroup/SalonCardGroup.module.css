@@ -1,0 +1,39 @@
+@reference "tailwindcss";
+
+@layer components {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  /* Tablet: 2 columns */
+  @media (min-width: 768px) {
+    .container {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 1.5rem;
+    }
+  }
+
+  /* Desktop: 3 columns */
+  @media (min-width: 1024px) {
+    .container {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+  }
+
+  /* Large desktop: 4 columns */
+  @media (min-width: 1280px) {
+    .container {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .dark {
+    /* Theme-specific adjustments if needed */
+  }
+}

@@ -1,0 +1,37 @@
+@reference "tailwindcss";
+
+:local(.countdown) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fed7aa;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+:global(.dark) :local(.countdown) {
+  background-color: #7c2d12;
+}
+
+:local(.icon) {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #c2410c;
+}
+
+:global(.dark) :local(.icon) {
+  color: #fed7aa;
+}
+
+:local(.text) {
+  font-weight: 600;
+  color: #9a3412;
+}
+
+:global(.dark) :local(.text) {
+  color: #fed7aa;
+}
+
+:local(.hidden) {
+  display: none;
+}

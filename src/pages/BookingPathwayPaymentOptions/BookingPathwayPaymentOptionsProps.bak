@@ -1,0 +1,11 @@
+import { CheckoutMode, Service, UserInterfaceTheme } from '@app/types';
+
+export interface BookingPathwayPaymentOptionsProps {
+  service: Service | null;
+  currencySymbol: string;
+  checkoutMode: CheckoutMode | null;
+  onSelectCheckoutMode: (mode: CheckoutMode) => void;
+  onSelectPaymentOption: (option: 'full' | 'deposit' | 'skip') => void;
+  onBack: () => void;
+  theme?: UserInterfaceTheme;
+}

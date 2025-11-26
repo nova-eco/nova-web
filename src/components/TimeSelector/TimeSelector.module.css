@@ -1,0 +1,71 @@
+:local(.timeSection) {
+  flex: 1;
+}
+
+:local(.sectionTitle) {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(var(--color-text-primary));
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  :local(.sectionTitle) {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+}
+
+:local(.timeGrid) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  :local(.timeGrid) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :local(.timeGrid) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+:local(.timeSlot) {
+  padding: 0.75rem;
+  border: 2px solid rgb(var(--color-border));
+  border-radius: 0.5rem;
+  background-color: rgb(var(--color-background));
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--color-text-primary));
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  :local(.timeSlot) {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+:local(.timeSlot:hover) {
+  border-color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-surface));
+}
+
+:local(.timeSlot.selected) {
+  border-color: rgb(var(--color-primary));
+  background-color: rgb(var(--color-primary));
+  color: rgb(var(--color-background));
+}

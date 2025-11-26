@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+@layer components {
+  .card {
+    background-color: rgb(var(--color-surface));
+    border: 1px solid rgb(var(--color-border));
+    border-radius: 0.5rem;
+    color: rgb(var(--color-text-primary));
+    padding: 1.5rem;
+    transition: all 0.2s;
+  }
+
+  .card:hover {
+    border-color: rgb(var(--color-border-hover));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
