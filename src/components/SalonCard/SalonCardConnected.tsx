@@ -6,7 +6,6 @@ import type { SalonCardOwnProps } from './SalonCardOwnProps';
 import type { SalonCardProps } from './SalonCardProps';
 
 const mapStateToProps = (state: RootState) => ({
-  /*disable @typescript-eslint/no-explicit-any */
   locations: (state as any)?.locations?.entities || [],
   maps: ((state as any)?.maps?.entities || []) as Map[],
   salonImages: (state as any)?.salonImages?.entities || [],

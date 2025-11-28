@@ -14,7 +14,6 @@
 # Hidden files to be ignored
 #
 .editorconfig
-.env
 .gitignore
 .prettierignore
 .prettierrc.json
