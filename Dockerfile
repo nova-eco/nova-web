@@ -60,7 +60,5 @@ RUN chown -R nodejs:nodejs /app
 USER nodejs
 
 EXPOSE ${NOVA_API_PORT}
-HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:${NOVA_WEB_PORT}/healthcheck', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
 
 CMD ["node", "server/index.mjs"]
