@@ -2,29 +2,38 @@
 #                                                                   #
 # Script:  compose.yaml                                             #
 #                                                                   #
-# Purpose: Docker compose definition for ecodev-fe-web              #
+# Purpose: Docker compose definition for nova-web                   #
 #          with overrides defined in compose.override.yaml          #
 #                                                                   #
-# Date:    20th June 2025                                           #
+# Date:    28th November 2025                                       #
 #                                                                   #
-# Author:  ecodev admin <admin@ecodev.eco>                          #
+# Author:  nova admin <admin@nova.eco>                              #
 #                                                                   #
 #####################################################################
 
 services:
-  ecodev-fe-web:
+  nova-web:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: '${ECODEV_FE_WEB_SERVER_CONTAINER_NAME}'
+      args:
+        NOVA_WEB_API_HOST: ${NOVA_WEB_API_HOST}
+        NOVA_WEB_API_PORT: ${NOVA_WEB_API_PORT}
+        NOVA_WEB_API_PROTOCOL: ${NOVA_WEB_API_PROTOCOL}
+        NOVA_WEB_AUTHOR: ${NOVA_WEB_AUTHOR}
+        NOVA_WEB_NAME: ${NOVA_WEB_NAME}
+        NOVA_WEB_NETWORK: ${NOVA_WEB_NETWORK}
+        NOVA_WEB_PORT: ${NOVA_WEB_PORT}
+    container_name: '${NOVA_WEB_NAME}'
     env_file:
       - path: ./.env
         required: true
     ports:
-      - '${ECODEV_FE_WEB_SERVER_PORT}:${ECODEV_FE_WEB_SERVER_PORT}'
+      - '${NOVA_WEB_PORT}:${NOVA_WEB_PORT}'
     healthcheck:
-      test: ['CMD', 'curl', '-f', 'http://localhost:${ECODEV_FE_WEB_SERVER_PORT}']
+      test: ['CMD', 'curl', '-f', 'http://localhost:${NOVA_WEB_PORT}/healthcheck']
       interval: 10s
       timeout: 10s
       retries: 3
       start_period: 30s
+    restart: unless-stopped

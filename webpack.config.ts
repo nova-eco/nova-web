@@ -1,3 +1,15 @@
+/*********************************************************************
+ *                                                                   *
+ * SCRIPT:      webpack.config.ts                                    *
+ *                                                                   *
+ * AUTHOR:      Nova Admin <admin@nova.eco>                          *
+ *                                                                   *
+ * DATE:        28th November 2025                                   *
+ *                                                                   *
+ * PURPOSE:     Webpack configuration for nova-web.                  *
+ *                                                                   *
+ *********************************************************************/
+
 import 'dotenv/config';
 import path from 'path';
 import Dotenv from 'dotenv-webpack';
@@ -8,7 +20,7 @@ const dirNameInput = 'src';
 const fileNameInput = 'index.tsx';
 const fileNameOutput = 'index.js';
 const notFoundError = 'NOT_FOUND';
-const serverPortEnvVar = 'NOVA_FE_WEB_SERVER_PORT';
+const serverPortEnvVar = 'NOVA_WEB_PORT';
 
 const dirPathRoot = path.resolve(__dirname);
 const dirPathInput = path.resolve(dirPathRoot, dirNameInput);

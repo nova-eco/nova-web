@@ -4,7 +4,7 @@
  *                                                                   *
  * AUTHOR:      Nova Admin <admin@nova.eco>                          *
  *                                                                   *
- * DATE:        27th November 2025                                   *
+ * DATE:        28th November 2025                                   *
  *                                                                   *
  * PURPOSE:     Commitlint configuration for conventional commits.   *
  *                                                                   *

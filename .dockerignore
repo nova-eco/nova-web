@@ -1,31 +1,42 @@
 #####################################################################
 #                                                                   #
-# Script:  .prettierignore                                          #
+# Script:  .dockerignore                                            #
 #                                                                   #
-# Purpose: A list of files and dirs to be ignored by prettier.      #
+# Purpose: A list of files and dirs to be ignored by Docker.        #
 #                                                                   #
-# Date:    12th October 2025                                        #
+# Date:    28th November 2025                                       #
 #                                                                   #
-# Author:  Nova admin <admin@nova.eco>                              #
+# Author:  admin <admin@nova>                                       #
 #                                                                   #
 #####################################################################
+
+#
+# Hidden files to be ignored
+#
+.editorconfig
+.env
+.gitignore
+.prettierignore
+.prettierrc.json
 
 #
 # Standard files to be ignored
 #
 CHANGELOG.md
+cspell.json
 LICENSE.txt
-
-#
-# Standard dirs to be ignored
-#
-coverage/
-dist/
-node_modules/
+README.md
 
 #
 # Hidden dirs to be ignored
 #
-.git.
-.github/
-.husky/
+.git
+.github
+.husky
+
+#
+# Standard dirs to be ignored
+#
+coverage
+dist
+node_modules

@@ -2,19 +2,20 @@
 #                                                                   #
 # Script:  compose.override.yaml                                    #
 #                                                                   #
-# Purpose: Docker compose overrides for ecodev-fe-web               #
+# Purpose: Docker compose overrides for nova-web                    #
 #                                                                   #
-# Date:    20th June 2025                                           #
+# Date:    28th November 2025                                       #
 #                                                                   #
-# Author:  ecodev admin <admin@ecodev.eco>                          #
+# Author:  nova admin <admin@nova.eco>                              #
 #                                                                   #
 #####################################################################
 
 services:
-  ecodev-fe-web:
+  nova-web:
     networks:
-      - '${ECODEV_FE_NETWORK}'
+      - '${NOVA_WEB_NETWORK}'
 networks:
-  ecodev-fe-network:
+  nova-network:
     driver: bridge
-    name: '${ECODEV_FE_NETWORK}'
+    internal: false
+    name: '${NOVA_WEB_NETWORK}'
