@@ -31,10 +31,4 @@ services:
         required: true
     ports:
       - '${NOVA_WEB_PORT}:${NOVA_WEB_PORT}'
-    healthcheck:
-      test: ['CMD', 'curl', '-f', 'http://localhost:${NOVA_WEB_PORT}/healthcheck']
-      interval: 10s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
     restart: unless-stopped
