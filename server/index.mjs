@@ -23,27 +23,17 @@ const fileNameEnv = '.env';
 const fileNameIndex = 'index.html';
 
 const dirPathServer = path.dirname(fileNameCurrent);
-console.log({ dirPathServer });
-
 const dirPathRoot = path.resolve(dirPathServer, '../');
-console.log({ dirPathRoot });
-
 const dirPathDist = path.resolve(dirPathRoot, dirNameDist);
-console.log({ dirPathDist });
-const filePathEnv = path.resolve(dirPathRoot, fileNameEnv);
-console.log({ filePathEnv });
 const filePathIndex = path.resolve(dirPathDist, fileNameIndex);
-console.log({ filePathIndex });
 
-const requiredFilePaths = [filePathEnv, filePathIndex];
+const requiredFilePaths = [filePathIndex];
 
 for (const requiredFilePath of requiredFilePaths) {
   if (!fs.existsSync(requiredFilePath)) {
     throw new Error(`requiredFilePath (${requiredFilePath}): ${errorNotFound}`);
   }
 }
-
-dotenv.config(filePathEnv);
 
 const envVarServerHost = 'NOVA_WEB_HOST';
 const envVarServerName = 'NOVA_WEB_NAME';

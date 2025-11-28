@@ -52,7 +52,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/.env ./.env
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/server ./server
 
