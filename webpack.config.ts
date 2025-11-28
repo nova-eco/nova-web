@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import path from 'path';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const dirNameOutput = 'dist';
 const dirNameInput = 'src';
@@ -62,7 +62,7 @@ const config = {
     new CopyWebpackPlugin({
       patterns: [{ from: 'public' }],
     }),
-	  new Dotenv()
+    new Dotenv(),
   ],
   resolve: {
     alias: {

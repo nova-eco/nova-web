@@ -8,7 +8,6 @@ export const locationWithMap: Location = {
   addressLineOne: '123 High Street',
   addressLineTwo: 'Suite 100',
   area: 'Downtown',
-
 };
 
 export const locationWithoutMap: Location = {

@@ -1,0 +1,30 @@
+#####################################################################
+#                                                                   #
+# Script:  compose.yaml                                             #
+#                                                                   #
+# Purpose: Docker compose definition for ecodev-fe-web              #
+#          with overrides defined in compose.override.yaml          #
+#                                                                   #
+# Date:    20th June 2025                                           #
+#                                                                   #
+# Author:  ecodev admin <admin@ecodev.eco>                          #
+#                                                                   #
+#####################################################################
+
+services:
+  ecodev-fe-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: '${ECODEV_FE_WEB_SERVER_CONTAINER_NAME}'
+    env_file:
+      - path: ./.env
+        required: true
+    ports:
+      - '${ECODEV_FE_WEB_SERVER_PORT}:${ECODEV_FE_WEB_SERVER_PORT}'
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:${ECODEV_FE_WEB_SERVER_PORT}']
+      interval: 10s
+      timeout: 10s
+      retries: 3
+      start_period: 30s

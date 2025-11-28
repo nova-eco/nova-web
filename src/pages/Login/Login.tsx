@@ -19,7 +19,7 @@ export const Login: React.FC<LoginProps> = (props) => {
     }
   }, [hasSetupBeenSuccessful, loginSuccess, navigate, user]);
 
-  console.log("IN LOGIN PAGE");
+  console.log('IN LOGIN PAGE');
   return (
     <>
       <PageHeader title="Login" subtitle="Enter your login credentials" />
