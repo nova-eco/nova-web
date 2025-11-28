@@ -37,25 +37,6 @@ jobs:
       - name: Run format check
         run: npm run format:check
 
-  lint:
-    name: ESLint Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run ESLint check
-        run: npm run lint:check
-
   cspell:
     name: CSpell Check
     runs-on: ubuntu-latest

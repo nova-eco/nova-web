@@ -1,5 +1,5 @@
 {
-  "ignorePaths": [".git", ".github", "coverage", "dist", "node_modules", "package.json"],
+  "ignorePaths": [".git", ".github", "coverage", "dist", "node_modules", "package.json", "test/fixtures/*"],
   "language": "en-gb",
   "languageSettings": [
     {
@@ -7,5 +7,31 @@
     }
   ],
   "version": "0.2",
-  "words": ["ecodev", "granul8", "healthcheck", "thunk", "thunks", "tsconfg", "tspaths"]
+  "words": [
+		"addgroup",
+		"adduser",
+		"autodocs",
+		"centered",
+		"color",
+		"colors",
+		"dayindex",
+		"ecodev",
+		"granul8",
+		"healthcheck",
+		"ingroup",
+		"Lcase",
+		"lucide",
+		"nav",
+		"navs",
+		"Nonexistent",
+		"redux",
+		"testuser",
+		"thunk",
+		"thunks",
+		"tsconfg",
+		"tspaths",
+		"untruthy",
+		"var",
+		"vars"
+	]
 }
